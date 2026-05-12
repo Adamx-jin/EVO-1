@@ -17,7 +17,7 @@ video_lock = threading.Lock()
 shared_frame = {"base": None, "wrist": None}
 ENABLE_DISPLAY = True
 num_steps = 300
-SERVER_URI = "ws://localhost:9000" 
+SERVER_URI = "ws://localhost:9001" 
 
 DEFAULT_RESET_POSITION = [0, -0.96, 1.16, 0, -0.3, 0]
 PI0_RESET_POSITION     = [0, -1.5, 1.5, 0, 0, 0]

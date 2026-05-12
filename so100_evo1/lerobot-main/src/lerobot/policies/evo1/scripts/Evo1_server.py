@@ -149,7 +149,7 @@ if __name__ == "__main__":
     ckpt_dir = "Your/Path/To/Checkpoint"
     #Example: ckpt_dir = "/home/dell/checkpoints/Evo1/Evo1_MetaWorld/"
 
-    port = 9000
+    port = 9001
 
     print("Loading EVO_1 model...")
     model, normalizer = load_model_and_normalizer(ckpt_dir)

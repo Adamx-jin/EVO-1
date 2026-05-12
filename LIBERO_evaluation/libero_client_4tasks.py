@@ -20,7 +20,7 @@ LIBERO_DUMMY_ACTION = [0.0] * 6 + [0.0]
 class Args():
     horizon = 14
     max_steps = [25,25, 25, 95] 
-    SERVER_URL = "ws://0.0.0.0:9000"
+    SERVER_URL = "ws://0.0.0.0:9001"
     ckpt_name = f"Evo1_libero_all"  
     task_suites = ["libero_spatial", "libero_object", "libero_goal", "libero_10"] 
     log_file = f"./log_file/{ckpt_name}.txt"
