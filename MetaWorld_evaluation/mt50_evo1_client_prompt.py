@@ -4,6 +4,10 @@ import json
 import os
 from typing import List, Optional, Dict, Set
 
+# Headless rendering defaults for Colab / remote runners.
+os.environ.setdefault("MUJOCO_GL", "egl")
+os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+
 import cv2
 import gymnasium as gym
 import metaworld  # noqa: F401
@@ -24,7 +28,7 @@ def make_log_path(prefix="eval"):
 LOG_PATH = make_log_path("mt50")
 # ====================================================
 
-SHOW_WINDOW = True
+SHOW_WINDOW = os.environ.get("METAWORLD_SHOW_WINDOW", "0") == "1"
 SAVE_IMAGE = False
 SAVE_VIDEO = True  # save the video of each episode to disk
 
@@ -70,8 +74,6 @@ FALLBACK_IDX_LIST: Optional[List[int]] = None
 TASKS_JSONL_PATH = "tasks.jsonl"         
 # ==================================================================
 
-# Headless GL by default; switch to 'glfw' on a desktop if you want
-os.environ.setdefault("MUJOCO_GL", "egl")
 gym.logger.min_level = gym.logger.ERROR
 
 

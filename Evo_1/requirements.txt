@@ -12,7 +12,7 @@ pyarrow
 accelerator
 deepspeed
 websockets
-opencv-python
+opencv-python-headless
 swanlab
 wandb
 av
