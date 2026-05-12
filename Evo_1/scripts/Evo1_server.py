@@ -149,7 +149,7 @@ if __name__ == "__main__":
     ckpt_dir = os.environ.get("EVO1_CKPT_DIR", "Your/Path/To/Checkpoint")
     #Example: ckpt_dir = "/home/dell/checkpoints/Evo1/Evo1_MetaWorld/"
 
-    port = int(os.environ.get("EVO1_SERVER_PORT", "9000"))
+    port = int(os.environ.get("EVO1_SERVER_PORT", "9001"))
 
     if ckpt_dir == "Your/Path/To/Checkpoint":
         raise ValueError("Set EVO1_CKPT_DIR to the checkpoint directory before starting the server.")

@@ -45,7 +45,7 @@ VIDEO_DUP_FRAMES = 1  # Number of times to duplicate each frame when writing vid
 
 
 # ===================== User Config (edit here) =====================
-SERVER_URL = "ws://127.0.0.1:9000"
+SERVER_URL = os.environ.get("EVO1_SERVER_URL", "ws://127.0.0.1:9001")
 
 # Camera & image settings
 CAMERA_NAME = "corner2"        
