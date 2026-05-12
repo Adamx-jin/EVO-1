@@ -80,8 +80,9 @@ class InternVL3Embedder(nn.Module):
             model_name,
             torch_dtype=torch.bfloat16,
             trust_remote_code=True,
-            use_flash_attn=True,
-            low_cpu_mem_usage=True,
+            use_flash_attn=False,
+            low_cpu_mem_usage=False,
+            device_map=None,
             _fast_init=False,
         ).to(self.device) 
         
