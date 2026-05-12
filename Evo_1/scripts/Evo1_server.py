@@ -146,10 +146,13 @@ async def handle_request(websocket, model, normalizer):
 
 # === 启动服务 ===
 if __name__ == "__main__":
-    ckpt_dir = "/content/drive/MyDrive/EVO-1-data/checkpoints/metaworld"
+    ckpt_dir = os.environ.get("EVO1_CKPT_DIR", "Your/Path/To/Checkpoint")
     #Example: ckpt_dir = "/home/dell/checkpoints/Evo1/Evo1_MetaWorld/"
 
-    port = 9000
+    port = int(os.environ.get("EVO1_SERVER_PORT", "9100"))
+
+    if ckpt_dir == "Your/Path/To/Checkpoint":
+        raise ValueError("Set EVO1_CKPT_DIR to the checkpoint directory before starting the server.")
 
     print("Loading EVO_1 model...")
     model, normalizer = load_model_and_normalizer(ckpt_dir)
